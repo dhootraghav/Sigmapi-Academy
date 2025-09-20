@@ -1,9 +1,14 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
+  const location = useLocation();
+
+  // determine active nav item by pathname
+  const path = location.pathname || "/";
+  const isActive = (p) => (p === "/" ? path === "/" : path.startsWith(p));
 
   return (
     <>
@@ -22,7 +27,7 @@ export default function Navbar() {
         <div className="header-right">
           <nav className="nav-links">
             <ul>
-              <li className="nav-item active">
+              <li className={`nav-item ${isActive('/') ? 'active' : ''}`}>
                 <NavLink to="/" end>Home</NavLink>
               </li>
 
@@ -36,8 +41,8 @@ export default function Navbar() {
                 </ul>
               </li>
 
-              <li className="nav-item"><NavLink to="/testimonials">Testimonials</NavLink></li>
-              <li className="nav-item"><NavLink to="/contact">Contact</NavLink></li>
+              <li className={`nav-item ${isActive('/testimonials') ? 'active' : ''}`}><NavLink to="/testimonials">Testimonials</NavLink></li>
+              <li className={`nav-item ${isActive('/contact') ? 'active' : ''}`}><NavLink to="/contact">Contact</NavLink></li>
             </ul>
           </nav>
 
