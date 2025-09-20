@@ -69,6 +69,25 @@ body {
   color: #000;
 }
 
+/* Make the desktop 'Courses' button visually match other nav hover styles,
+   but keep it non-selectable and non-clickable on desktop (hover only).
+   Mobile hamburger/menu behavior is not changed. */
+.nav-item.dropdown .dropbtn {
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  user-select: none; /* prevent text selection */
+}
+
+/* ensure hover when hovering the whole nav-item (matches other nav items) */
+.nav-item.dropdown:hover > .dropbtn {
+  background-color: #e7e7e7;
+  color: #000;
+}
+
+/* keep cursor default for the dropbtn (it opens on hover) */
+.nav-item.dropdown .dropbtn { cursor: default; }
+
 /* Dropdown menu */
 .dropdown-menu {
   padding: 0;
@@ -623,11 +642,11 @@ body {
 
   .hero-text p {
     font-size: 0.95rem;
-  }
-
-  .register, .about-us {
+  .about-video video {
+    max-height: 250px;
     font-size: 0.9rem;
     padding: 6px 12px;
+}
   }
 
   .about-us {
@@ -807,6 +826,12 @@ body {
     -webkit-overflow-scrolling: touch;
   }
 
+  /* When auto-scrolling with JS we temporarily disable native snap to avoid jumps */
+  .carousel-container.auto-scrolling {
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important; /* we'll control movement via JS */
+  }
+
   .carousel-track {
     display: flex;
     gap: 30px;
@@ -858,7 +883,7 @@ body {
 
 @media (max-width: 480px) {
   .carousel-container {
-    padding: 50px 20px;
+    padding: 40px 16px;
   }
 
 .course-card {
@@ -866,6 +891,11 @@ body {
   box-sizing: border-box;
   scroll-snap-align: center;
 }
+
+  /* tighter gap on very small screens */
+  .carousel-track {
+    gap: 12px;
+  }
 
   .course-card img {
     height: 100px;
@@ -945,28 +975,41 @@ body {
 }
 
 .about-text {
-  flex: 1;
+  /* left column: take half the available width (account for gap) */
+  flex: 0 0 calc(50% - 20px);
+  max-width: calc(50% - 20px);
   color: #333;
+  transition: flex-basis 240ms ease, max-width 240ms ease;
 }
 
 .about-video {
-  flex: 1;
-  max-width: 500px;
+  /* right column: take the other half */
+  flex: 0 0 calc(50% - 20px);
+  max-width: calc(50% - 20px);
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: flex-basis 240ms ease, max-width 240ms ease;
 }
 
 .about-video video {
   width: 100%;
-  height: auto;
   border-radius: 16px;
-  max-height: 320px;
 }
 
 @media (max-width: 1166px) {
   .about-text h2 {
     font-size: 2em;
+  }
+
+  /* Make subtitle and 'Meet the Founder' heading use SigmaPi blue */
+  .about-text .subtitle {
+    color: #666; /* SigmaPi blue */
+  }
+
+  .about-text h3 {
+    color: #0077ff; /* SigmaPi blue */
+    margin-top: 18px; /* gap between paragraphs and the founder section */
   }
 
   .about-text .subtitle {
@@ -982,12 +1025,50 @@ body {
   }
 
   .about-video {
-    max-width: 400px;
+    /* allow video to expand via flex; no fixed max-width */
+    max-width: none;
   }
 
   .about-video video {
     max-height: 280px;
   }
+}
+/* Smoothly adjust left/right proportions as viewport shrinks */
+@media (max-width: 1200px) {
+  .about-text { flex-basis: calc(48% - 18px); max-width: calc(48% - 18px); }
+  .about-video { flex-basis: calc(52% - 18px); max-width: calc(52% - 18px); }
+}
+
+@media (max-width: 900px) {
+  .about-text { flex-basis: calc(46% - 16px); max-width: calc(46% - 16px); }
+  .about-video { flex-basis: calc(54% - 16px); max-width: calc(54% - 16px); }
+}
+
+@media (max-width: 700px) {
+  .about-text, .about-video { flex-basis: 100%; max-width: 100%; }
+  .about-container { gap: 12px; }
+}
+@media (min-width: 1025px) {
+  /* Desktop/laptop: allow larger about video */
+  .about-video {
+    /* expand to fill available space */
+    max-width: none;
+  }
+
+  .about-video video,
+  .about-video iframe {
+    /* maintain 16:9 aspect ratio and keep rounded corners */
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    max-height: 350px;
+    height: 840px; /* explicit height to force taller video on desktop */
+    border-radius: 14px;
+  }
+}
+
+/* ensure 'Meet the Founder' heading color is applied globally */
+.about-text h3 {
+  color: #0077ff;
 }
 @media (max-width: 768px) {
   .about-container {
@@ -1003,6 +1084,52 @@ body {
 
   .about-video video {
     max-height: 250px;
+}
+}
+/* Phone-only refinements: improve about text and make iframe larger + rounded corners */
+@media (max-width: 480px) {
+  .about-container {
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 0 14px;
+  }
+
+  .about-text {
+    width: 100%;
+    text-align: left; /* keep natural reading flow on small screens */
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+  }
+
+  .about-text .subtitle {
+    margin-bottom: 10px;
+    color: #666;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .about-video {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
+
+  .video-wrapper iframe {
+    width: 100%;
+    height: 56vw; /* responsive taller video on phones */
+    min-height: 240px;
+    border-radius: 12px; /* rounded corners */
+    overflow: hidden;
+    display: block;
   }
 }
 

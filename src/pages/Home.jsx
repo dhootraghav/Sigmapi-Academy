@@ -5,6 +5,51 @@ export default function Home() {
   const vantaInstance = useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
 
+  // Lock body scroll when modal is open and restore on close
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+
+    const body = document.body;
+    if (modalOpen) {
+      // preserve current scroll position
+      const scrollY = window.scrollY || window.pageYOffset;
+      body.style.position = 'fixed';
+      body.style.top = `-${scrollY}px`;
+      body.style.left = '0';
+      body.style.right = '0';
+      body.style.overflow = 'hidden';
+      body.setAttribute('data-scroll-y', String(scrollY));
+    } else {
+      // restore
+      const stored = body.getAttribute('data-scroll-y');
+      if (stored) {
+        const scrollY = parseInt(stored, 10);
+        body.style.position = '';
+        body.style.top = '';
+        body.style.left = '';
+        body.style.right = '';
+        body.style.overflow = '';
+        body.removeAttribute('data-scroll-y');
+        window.scrollTo(0, scrollY);
+      }
+    }
+
+    // cleanup in case component unmounts while modal is open
+    return () => {
+      if (body.getAttribute('data-scroll-y')) {
+        const stored = body.getAttribute('data-scroll-y');
+        const scrollY = stored ? parseInt(stored, 10) : 0;
+        body.style.position = '';
+        body.style.top = '';
+        body.style.left = '';
+        body.style.right = '';
+        body.style.overflow = '';
+        body.removeAttribute('data-scroll-y');
+        window.scrollTo(0, scrollY);
+      }
+    };
+  }, [modalOpen]);
+
   // VANTA.GLOBE init/destroy
   useEffect(() => {
     const init = () => {
@@ -31,12 +76,87 @@ export default function Home() {
 
   // Simple carousel controls (scroll-based, works with your layout)
   const containerRef = useRef(null);
+  const rafRef = useRef(null);
+  const speedRef = useRef(0.22); // slightly slower default (~220px/sec)
+  const isPausedRef = useRef(false);
   const scrollBy = (dir) => {
     const el = containerRef.current;
     if (!el) return;
     const amount = el.clientWidth * 0.8;
     el.scrollBy({ left: dir * amount, behavior: "smooth" });
   };
+
+  // Auto-scroll loop using requestAnimationFrame. We duplicate the track content in render
+  // so when scrollLeft >= scrollWidth / 2 we wrap back by subtracting half.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    // Detect touch devices and slightly reduce speed for smoother mobile experience
+    const isTouch = typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+    if (isTouch) {
+      speedRef.current = Math.max(0.12, speedRef.current * 0.55); // safer default on mobile
+    }
+
+    // Temporarily disable native scroll-snap while auto-scrolling to avoid snap jumps
+    el.classList.add("auto-scrolling");
+
+    let lastTime = performance.now();
+
+    const step = (t) => {
+      if (isPausedRef.current) {
+        lastTime = t;
+        rafRef.current = requestAnimationFrame(step);
+        return;
+      }
+      const dt = t - lastTime;
+      lastTime = t;
+      // advance by speed * dt
+      const delta = speedRef.current * dt;
+      el.scrollLeft = el.scrollLeft + delta;
+
+      // When we've scrolled past half (since we duplicate), wrap to start
+      if (el.scrollLeft >= el.scrollWidth / 2) {
+        el.scrollLeft = el.scrollLeft - el.scrollWidth / 2;
+      }
+
+      rafRef.current = requestAnimationFrame(step);
+    };
+
+    rafRef.current = requestAnimationFrame(step);
+
+  // Pause on hover/focus
+  const onEnter = () => (isPausedRef.current = true);
+  const onLeave = () => (isPausedRef.current = false);
+  el.addEventListener("mouseenter", onEnter);
+  el.addEventListener("mouseleave", onLeave);
+  el.addEventListener("focusin", onEnter);
+  el.addEventListener("focusout", onLeave);
+  // Pause on touch / pointer interactions
+  const onPointerDown = () => (isPausedRef.current = true);
+  const onPointerUp = () => (isPausedRef.current = false);
+  el.addEventListener("touchstart", onPointerDown, { passive: true });
+  el.addEventListener("touchend", onPointerUp);
+  el.addEventListener("touchcancel", onPointerUp);
+  el.addEventListener("pointerdown", onPointerDown);
+  el.addEventListener("pointerup", onPointerUp);
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      el.removeEventListener("mouseenter", onEnter);
+      el.removeEventListener("mouseleave", onLeave);
+      el.removeEventListener("focusin", onEnter);
+      el.removeEventListener("focusout", onLeave);
+      el.removeEventListener("touchstart", onPointerDown);
+      el.removeEventListener("touchend", onPointerUp);
+      el.removeEventListener("touchcancel", onPointerUp);
+      el.removeEventListener("pointerdown", onPointerDown);
+      el.removeEventListener("pointerup", onPointerUp);
+
+      // restore snap behavior
+      el.classList.remove("auto-scrolling");
+    };
+  }, []);
 
   return (
     <>
@@ -64,7 +184,7 @@ export default function Home() {
         <div className="carousel-wrapper">
           <button className="arrow left" onClick={() => scrollBy(-1)}>&#8249;</button>
 
-          <div className="carousel-container" ref={containerRef}>
+          <div className="carousel-container" ref={containerRef} tabIndex={0} aria-label="Courses carousel">
             <div className="carousel-track">
               {[
                 { src: "/pictures/python logo.png", title: "Python" },
@@ -73,8 +193,16 @@ export default function Home() {
                 { src: "/pictures/rdbms.png", title: "Relational Data Base" },
                 { src: "/pictures/ai logo.avif", title: "Artificial Intelligence" },
                 { src: "/pictures/robotics.jpg", title: "Robotics" },
-              ].map((c) => (
-                <div className="course-card" key={c.title}>
+              ].concat([
+                // duplicate for seamless loop
+                { src: "/pictures/python logo.png", title: "Python" },
+                { src: "/pictures/c and cpp.png", title: "C & C++" },
+                { src: "/pictures/java.webp", title: "Java" },
+                { src: "/pictures/rdbms.png", title: "Relational Data Base" },
+                { src: "/pictures/ai logo.avif", title: "Artificial Intelligence" },
+                { src: "/pictures/robotics.jpg", title: "Robotics" },
+              ]).map((c, idx) => (
+                <div className="course-card" key={c.title + idx} tabIndex={0} role="group" aria-label={c.title}>
                   <img src={c.src} alt={c.title} />
                   <h3>{c.title}</h3>
                 </div>
