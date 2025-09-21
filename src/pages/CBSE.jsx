@@ -18,22 +18,22 @@ export default function CBSE() {
         <section className="board-section">
           <h2>Select Your Class</h2>
           <div className="class-cards-container">
-            <Link to="/cbse/class-9" className="class-card">
+            <Link to="/cbse/class/9" className="class-card">
               <div className="class-number">9</div>
               <h3>Class 9</h3>
               <p>Foundation Building</p>
             </Link>
-            <Link to="/cbse/class-10" className="class-card">
+            <Link to="/cbse/class/10" className="class-card">
               <div className="class-number">10</div>
               <h3>Class 10</h3>
               <p>Board Preparation</p>
             </Link>
-            <Link to="/cbse/class-11" className="class-card">
+            <Link to="/cbse/class/11" className="class-card">
               <div className="class-number">11</div>
               <h3>Class 11</h3>
               <p>Advanced Concepts</p>
             </Link>
-            <Link to="/cbse/class-12" className="class-card">
+            <Link to="/cbse/class/12" className="class-card">
               <div className="class-number">12</div>
               <h3>Class 12</h3>
               <p>Final Preparation</p>

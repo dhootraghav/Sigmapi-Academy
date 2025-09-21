@@ -18,16 +18,18 @@ export default function WB() {
         <section className="board-section">
           <h2>Select Your Class</h2>
           <div className="class-cards-container wb-classes">
-            <Link to="/wb/class-11" className="class-card">
+            <Link to="/wb/class/11" className="class-card">
               <div className="class-number">11</div>
               <h3>Class 11</h3>
               <p>Foundation Building</p>
             </Link>
-            <Link to="/wb/class-12" className="class-card">
+
+            <Link to="/wb/class/12" className="class-card">
               <div className="class-number">12</div>
               <h3>Class 12</h3>
               <p>Board Preparation</p>
             </Link>
+
           </div>
         </section>
 
