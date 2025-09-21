@@ -28,7 +28,7 @@ const COURSES = [
     alt: "IGCSE",
   },
   {
-    to: "/wbchse", // your old link was wbchseindex.html — use /wbchse if you prefer
+    to: "/wb", // Updated to match the route we created
     img: "/pictures/poster4.png",
     badge: "Class XI-XII",
     title: "Ace Your WB Board Exams",

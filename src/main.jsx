@@ -9,6 +9,7 @@ import Testimonial from "./pages/Testimonial.jsx";
 import Contact from "./pages/Contact.jsx";
 import School from "./pages/School.jsx";
 import College from "./pages/College.jsx";
+import ICSE from "./pages/ICSE.jsx";
 
 function Placeholder({ title }) {
   return <div style={{ padding: "4rem 1rem", fontSize: 20 }}>{title}</div>;
@@ -24,6 +25,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="college" element={<College />} />
           <Route path="testimonials" element={<Testimonial />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="icse" element={<ICSE />} />
+          {/* fallback for unmatched routes to avoid blank pages during dev */}
+          <Route path="*" element={<Placeholder title="Page not found" />} />
         </Route>
       </Routes>
     </BrowserRouter>

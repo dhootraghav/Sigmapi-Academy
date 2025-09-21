@@ -1,0 +1,456 @@
+/* src/styles/boards.css - Common styling for board pages (ICSE, WB, CBSE) */
+
+/* Board-specific navbar styling */
+.board-navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.board-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.board-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.board-logo {
+  height: 50px;
+  width: auto;
+}
+
+.board-logo-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.board-nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.board-nav-item a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.board-nav-item a:hover,
+.board-nav-item a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.board-back-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.board-back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Board page content styling */
+.board-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.25), rgb(192, 208, 246));
+}
+
+.board-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.board-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.board-main-logo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ICSE specific logo - bigger to fill circle better */
+.icse-logo {
+  width: 180px;
+  height: 180px;
+}
+
+.board-main-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.board-main-subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Class selection cards */
+.class-cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.class-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.class-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
+}
+
+.class-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+.class-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.class-card p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* WB Board specific - 2 class cards layout */
+.wb-classes {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 600px;
+}
+
+/* Board-specific content sections */
+.board-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.board-section {
+  margin-bottom: 3rem;
+}
+
+.board-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.board-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+/* Board-specific features grid */
+.board-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.board-feature {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.board-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.board-feature h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.board-feature p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Board-specific course cards (reusing from school.css) */
+.board-courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.board-course-card {
+  width: 380px;
+  border-radius: 15px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.board-course-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.board-course-info {
+  padding: 1rem;
+}
+
+.board-course-badge {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.board-course-info h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.board-course-info p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+/* Syllabus visualization styling */
+.syllabus-container {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.syllabus-image {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.syllabus-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.syllabus-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.syllabus-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.syllabus-overlay p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.explore-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+}
+
+.explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Learning approach section */
+.learning-approach {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.learning-approach h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.approach-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.approach-step {
+  text-align: center;
+  padding: 1rem;
+}
+
+.approach-step .step-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.approach-step h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.approach-step p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .board-nav-container {
+    padding: 0 1rem;
+  }
+  
+  .board-title {
+    font-size: 2.5rem;
+  }
+  
+  .board-courses {
+    gap: 2rem;
+  }
+  
+  .board-course-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .class-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .board-main-title {
+    font-size: 2.5rem;
+  }
+  
+  .board-main-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .board-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .class-cards-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .board-main-title {
+    font-size: 2rem;
+  }
+  
+  .board-main-subtitle {
+    font-size: 1rem;
+  }
+  
+  .board-content {
+    padding: 0 1rem 2rem;
+  }
+}
+

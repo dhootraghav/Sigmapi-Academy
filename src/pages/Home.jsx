@@ -237,9 +237,10 @@ export default function Home() {
             </p>
             <h3 style={{ fontSize: "1em" }}>Meet the Founder</h3>
             <p>
-              Satyender Kumar Mishra, a passionate educator and engineer with 10+ years of
-              experience, has worked with startups, universities, and global edtech platforms. He
-              blends deep technical knowledge with human-centered design to deliver impactful learning.
+              Satyender Kumar Mishra founded Sigmapi Academy, blending a strong academic foundation with deep industry expertise.
+              He holds a B.Tech in Computer Science and Engineering from IIT Kharagpur and an M.Tech in Computer Science and Engineering from the Indian Statistical Institute.
+              For over 16 years (2007–2024) as a Senior Research Software Engineer at IBM, Satyender worked on cutting-edge innovations, leading research-driven projects that solved complex real-world problems.
+              Since 2005, he has been building Sigmapi Academy with a mission to transform learning through technology, combining technical excellence with human-centered design to create impactful educational experiences.
             </p>
           </div>
 
