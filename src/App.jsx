@@ -1,6 +1,8 @@
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 import { Outlet, useLocation } from "react-router-dom";
+
 
 export default function App() {
   const location = useLocation();
@@ -15,5 +17,7 @@ export default function App() {
       </main>
       <Footer />
     </div>
+
+    
   );
 }
