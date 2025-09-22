@@ -6,79 +6,145 @@ import "../styles/boards.css";
 /** 🔧 Edit these placeholders later (titles, bullets, register links) */
 const WB_SUBJECTS = {
   11: [
-    {
-      slug: "computer-science",
-      title: "Computer Science",
-      img: "/pictures/icons/java.png",
-      summary: ["Programming basics", "Data structures intro", "OOP concepts"],
-      registerLink: "",
-    },
-    {
-      slug: "ai-robotics",
-      title: "AI & Robotics",
-      img: "/pictures/icons/robotics.png",
-      summary: ["Robotics foundations", "Python fundamentals", "AI project cycle"],
-      registerLink: "",
-    },
-    {
-      slug: "java-programming",
-      title: "Programming with Java",
-      img: "/pictures/icons/java.png",
-      summary: ["Syntax & OOP", "Collections", "Exceptions"],
-      registerLink: "",
-    },
-    {
-      slug: "data-structures",
-      title: "Data Structures",
-      img: "/pictures/icons/java.png",
-      summary: ["Arrays/Lists", "Stacks/Queues", "Sorting/Searching"],
-      registerLink: "",
-    },
-    {
-      slug: "web-development",
-      title: "Web Development",
-      img: "/pictures/icons/java.png",
-      summary: ["HTML/CSS", "JavaScript basics", "Mini projects"],
-      registerLink: "",
-    },
-  ],
+  {
+    slug: "artificial-intelligence",
+    title: "Artificial Intelligence",
+    img: "/pictures/AI-SEO.png",
+    summary: ["Computer Fundamental","Python Programming","Linear Algebra","AI search", "Knowledge representation", "Chatbots & uncertainty"],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdi_65IbXCWaMPM064LFaGC_ml_EOYMLihTuuxeQ9HwnCtH5A/viewform",
+  },
+  {
+    slug: "cyber-security",
+    title: "Cyber Security",
+    img: "/pictures/cybersecurity.jpeg",
+    highlights: [
+      "Computer Networks",
+      "Cryptography I",
+      "Internet Security"
+    ],
+    summary: ["Computer Systems","Computer Networks","Cybersecurity","Network Security", "Cryptography - Part I", "Internet Security"],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSeuJF3oo6qHR8uOqVNYc2fff49m-AkrwdUk7ZDS9sGcJg53CQ/viewform",
+  },
+  {
+    slug: "computer-application",
+    title: "Computer Application",
+    img: "/pictures/programming.webp",
+    summary: [
+  "Computer System and Organisation",
+  "Programming Fundamentals",
+  "Data Visualization using Spreadsheet",
+  "Data Structure",
+  "Computer Networks",
+  "Ethics"
+],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScVBpcpp2FDUPqrSFAx7wX187qO0bhn3DlmKeBnn6HafUkJMA/viewform",
+  },
+  {
+    slug: "computer-science",
+    title: "Computer Science",
+    img: "/pictures/computer system.jpeg",
+    summary: [
+  "Computer System and Organisation",
+  "Programming Fundamentals",
+  "Introduction to C",
+  "Data Structures",
+  "Computer Networks",
+  "Ethics"
+],
+
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScCcj3wErkqPok0Ji1u3-AlFiViSeKoSJWhUu49BeDDRykNyw/viewform",
+  },
+  {
+    slug: "data-science",
+    title: "Data Science",
+    img: "/pictures/data visualization.jpeg",
+    summary: [
+  "Computer Fundamental",
+  "Python Programming",
+  "History of AI and Introduction to Linear Algebra",
+  "History of data science and statistics",
+  "Data Visualization",
+  "Database Management",
+  "Basics of Business Theory"
+],
+
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScqSeh34U-WU8HM3dDXte3AhqQMB66QZ_BNyIQMvkwXdQWq_g/viewform",
+  },
+],
+
   12: [
-    {
-      slug: "computer-science",
-      title: "Computer Science (Advanced)",
-      img: "/pictures/icons/java.png",
-      summary: ["OOP deep dive", "Recursion & files", "SQL basics"],
-      registerLink: "",
-    },
-    {
-      slug: "ai-robotics",
-      title: "AI & Robotics (Advanced)",
-      img: "/pictures/icons/robotics.png",
-      summary: ["Model basics", "Project lifecycle", "Ethics"],
-      registerLink: "",
-    },
-    {
-      slug: "java-programming",
-      title: "Programming with Java (Advanced)",
-      img: "/pictures/icons/java.png",
-      summary: ["Interfaces/Inheritance", "Collections/Streams", "GUI"],
-      registerLink: "",
-    },
-    {
-      slug: "data-structures",
-      title: "Data Structures & Algorithms",
-      img: "/pictures/icons/java.png",
-      summary: ["Trees/Graphs (intro)", "Greedy/DP (concepts)", "Complexity"],
-      registerLink: "",
-    },
-    {
-      slug: "web-development",
-      title: "Web Development (Projects)",
-      img: "/pictures/icons/java.png",
-      summary: ["Forms/APIs", "Deploy basics", "Capstone site"],
-      registerLink: "",
-    },
+  {
+    slug: "artificial-intelligence",
+    title: "Artificial Intelligence",
+    img: "/pictures/AI-SEO.png",
+    summary: [
+  "Foundation of Statistics for Machine Learning",
+  "Introduction to Machine Learning",
+  "Supervised Learning",
+  "Unsupervised Learning",
+  "Artificial Neural Network",
+  "Ethics in AI"
+],
+
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSeNpKBAaHQ8nUXFcgAldu9FEh5X56J1LVMIVGEpPFvcqY4sDg/viewform",
+  },
+  {
+    slug: "cyber-security",
+    title: "Cyber Security",
+    img: "/pictures/cybersecurity.jpeg",
+    summary: [
+  "Web Security",
+  "Malicious Software",
+  "Mobile Device Security",
+  "Cryptography - Part II",
+  "Ethical Hacking",
+  "Ethical & Legal Considerations",
+  "Emerging Trends"
+],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSenxmd-E68gTbuvEG1OroyQa5ttW4y8AMJHq7Ix4k1r6ACkQQ/viewform",
+  },
+  {
+    slug: "computer-application",
+    title: "Computer Application",
+    img: "/pictures/programming.webp",
+    summary: [
+  "Python Programming",
+  "E-Commerce",
+  "Database Management System",
+  "Data Warehousing and Data Mining",
+  "Foundation of Artificial Intelligence (AI)"
+],
+
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSe1H82bwjL0b1rQGNbLLRrCJxQ9BrtsYzrTTZxi2-pkdTSoPw/viewform",
+  },
+  {
+    slug: "computer-science",
+    title: "Computer Science",
+    img: "/pictures/computer system.jpeg",
+    summary: [
+  "Python Programming",
+  "E-Commerce",
+  "Database Management System",
+  "Foundation of Artificial Intelligence (AI)"
+],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSebtWt4J6F5_NRz6J0-IaD2irs2D9j2_nkxwL-OfQEA9J8G5Q/viewform",
+  },
+  {
+    slug: "data-science",
+    title: "Data Science",
+    img: "/pictures/data visualization.jpeg",
+    summary: [
+    "Foundation of statistics for machine learning",
+    "Introduction to machine learning",
+    "Supervised learning",
+    "Decision tree learning and Unsupervised learning",
+    "Data visualization technique",
+    "Artificial neural network",
+    "Case studies in data science"
   ],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSc5OMtbVKAuXfvTtM1cEKbVZMry_RSbN0ndBHdWcC0hUS7XbQ/viewform",
+  },
+],
 };
 
 export default function WBClass() {
@@ -174,13 +240,8 @@ export default function WBClass() {
 
                   {(s.summary && s.summary.length) ? (
                     <div className="subject-highlights">
-                        {s.summary.slice(0, 3).map((item, i) => (
+                        {s.summary.slice(0, 7).map((item, i) => (
                         <div key={i} className="subject-highlight">
-                            {s.img ? (
-                            <img src={s.img} alt="" className="mini-icon" aria-hidden />
-                            ) : (
-                            <span className="mini-emoji" aria-hidden>📘</span>
-                            )}
                             <span>{item}</span>
                         </div>
                         ))}
@@ -188,10 +249,11 @@ export default function WBClass() {
                     ) : null}
 
                   <div className="card-actions">
-                    {/* relative link: resolves to /wb/class-<grade>/<slug> */}
                     <Link to={`/wb/class/${grade}/${s.slug}`} className="primary-btn">
-                        View detailed syllabus
+                    View detailed syllabus
                     </Link>
+
+
 
                     <button
                       className="secondary-btn"

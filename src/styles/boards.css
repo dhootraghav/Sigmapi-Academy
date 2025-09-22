@@ -1022,3 +1022,16 @@
   }
 }
 
+/* Center the text inside each highlight */
+.subject-highlight {
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  text-align: center;       /* center multi-line text */
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-height: 48px;
+}
+

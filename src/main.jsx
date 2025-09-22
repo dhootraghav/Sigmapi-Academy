@@ -78,8 +78,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="wb" element={<WB />} />
           <Route path="wb/class/:grade" element={<WBClass />} />
           <Route path="wb/class/:grade/:subject" element={<WBSyllabus />} />
-          <Route path="wb/class-:grade" element={<WBClass />} />
-          <Route path="wb/class-:grade/:subject" element={<WBSyllabus />} />
+
 
           {/* 404 */}
           <Route path="*" element={<div style={{ padding: 24 }}>Page not found</div>} />

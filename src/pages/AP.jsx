@@ -77,7 +77,7 @@ export default function AP() {
       {/* Hero */}
       <section className="board-hero">
         <h1 className="board-main-title">AP</h1>
-        <p className="board-main-subtitle">Advanced Placement — Computer Science A</p>
+        <p className="board-main-subtitle">Advanced Placement — Computer Science</p>
       </section>
 
       <div className="board-content">

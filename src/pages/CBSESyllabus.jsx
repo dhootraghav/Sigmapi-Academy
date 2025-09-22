@@ -3,41 +3,201 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import "../styles/boards.css";
 
-/** 🔧 Placeholder syllabi per subject — edit later */
+/** Placeholder syllabi per subject — edit freely */
 const CBSE_SYLLABUS = {
-  "computer-application": {
-    title: "Computer Applications",
+  // ---------------- CLASS 11 ----------------
+  "11-computer-science": {
+    title: "Computer Science",
     units: [
-      { unit: "Unit 1: Docs & Sheets", topics: ["Styles/templates", "Formulas/functions", "Charts"] },
-      { unit: "Unit 2: Web Basics", topics: ["HTML structure", "Forms", "Basic CSS"] },
-      { unit: "Unit 3: Cyber Safety", topics: ["Passwords", "Phishing", "Digital footprint"] },
+      { unit: "Unit 1: Number Systems & Logic", topics: [
+        "Binary, Octal, Decimal, Hexadecimal",
+        "1’s & 2’s complement arithmetic",
+        "Boolean algebra, Logic Gates"
+      ]},
+      { unit: "Unit 2: Python Programming", topics: [
+        "Data types, Variables, Operators",
+        "Control Structures (if, loops)",
+        "Functions & Recursion",
+        "String and List operations"
+      ]},
+      { unit: "Unit 3: Data Structures", topics: [
+        "Stacks and Queues",
+        "Implementation using Python"
+      ]},
+      { unit: "Unit 4: File Handling", topics: [
+        "Text and Binary files",
+        "Reading, Writing, Updating"
+      ]},
+      { unit: "Unit 5: DBMS", topics: [
+        "Relational databases",
+        "SQL basics: SELECT, INSERT, UPDATE, DELETE"
+      ]},
     ],
     registerLink: "",
   },
-  "ai": {
-    title: "Artificial Intelligence (Skill)",
-    units: [
-      { unit: "Unit 1: AI & Society", topics: ["What is AI", "Use-cases", "Impact"] },
-      { unit: "Unit 2: Data for AI", topics: ["Types", "Collection", "Cleaning"] },
-      { unit: "Unit 3: Python Intro", topics: ["Variables", "Operators", "Simple I/O"] },
-    ],
-    registerLink: "",
-  },
-  "computer-science": {
-    title: "Computer Science (Python)",
-    units: [
-      { unit: "Unit 1: Python Basics", topics: ["Data types", "Operators", "Expressions"] },
-      { unit: "Unit 2: Control & Functions", topics: ["if/elif/else", "Loops", "Functions"] },
-      { unit: "Unit 3: Files & SQL", topics: ["Text/binary", "CSV", "SQL basics/joins"] },
-    ],
-    registerLink: "",
-  },
-  "informatics-practices": {
+
+  "11-informatics-practices": {
     title: "Informatics Practices",
     units: [
-      { unit: "Unit 1: Pandas", topics: ["Series", "DataFrame", "Transform"] },
-      { unit: "Unit 2: Visualization", topics: ["Line/Bar/Pie", "Histogram"] },
-      { unit: "Unit 3: DB & Connectivity", topics: ["Relational model", "SQL", "Python-DB"] },
+      { unit: "Unit 1: Python Basics", topics: [
+        "Variables, Data types, Operators",
+        "Conditional statements, Loops"
+      ]},
+      { unit: "Unit 2: Data Handling", topics: [
+        "NumPy arrays",
+        "Pandas series and dataframes"
+      ]},
+      { unit: "Unit 3: Data Visualization", topics: [
+        "Matplotlib charts: line, bar, histogram, scatter"
+      ]},
+      { unit: "Unit 4: Database Concepts", topics: [
+        "RDBMS concepts",
+        "Basic SQL queries"
+      ]},
+      { unit: "Unit 5: IT Applications", topics: [
+        "Data security and privacy",
+        "Social impacts of IT"
+      ]},
+    ],
+    registerLink: "",
+  },
+
+  "11-ai": {
+    title: "Artificial Intelligence",
+    units: [
+      { unit: "Unit 1: Introduction to AI", topics: [
+        "Definition and scope",
+        "AI vs Human Intelligence",
+        "Applications of AI"
+      ]},
+      { unit: "Unit 2: Machine Learning Basics", topics: [
+        "Supervised vs Unsupervised",
+        "Simple Regression",
+        "Classification overview"
+      ]},
+      { unit: "Unit 3: Data Science Concepts", topics: [
+        "Data collection and processing",
+        "Data visualization basics"
+      ]},
+      { unit: "Unit 4: Ethics in AI", topics: [
+        "Bias and fairness",
+        "Accountability and transparency"
+      ]},
+    ],
+    registerLink: "",
+  },
+
+  "11-cyber-security": {
+    title: "Cyber Security",
+    units: [
+      { unit: "Unit 1: Fundamentals", topics: [
+        "Need for security",
+        "Digital footprints",
+        "Types of threats"
+      ]},
+      { unit: "Unit 2: Cyber Crimes", topics: [
+        "Phishing, Hacking, Malware",
+        "Ransomware, Cyber bullying"
+      ]},
+      { unit: "Unit 3: Safety Measures", topics: [
+        "Identity protection",
+        "Safe browsing habits"
+      ]},
+      { unit: "Unit 4: Laws & Ethics", topics: [
+        "IT Act",
+        "Cyber laws in India"
+      ]},
+    ],
+    registerLink: "",
+  },
+
+  // ---------------- CLASS 12 ----------------
+  "12-computer-science": {
+    title: "Computer Science",
+    units: [
+      { unit: "Unit 1: Python Advanced", topics: [
+        "OOP in Python",
+        "Inheritance, Polymorphism"
+      ]},
+      { unit: "Unit 2: Data Structures", topics: [
+        "Stacks, Queues, Linked Lists",
+        "Implementation in Python"
+      ]},
+      { unit: "Unit 3: SQL", topics: [
+        "Advanced queries",
+        "Joins, Group by, Aggregate functions"
+      ]},
+      { unit: "Unit 4: Networking", topics: [
+        "Basics of computer networks",
+        "Protocols and topologies"
+      ]},
+    ],
+    registerLink: "",
+  },
+
+  "12-informatics-practices": {
+    title: "Informatics Practices",
+    units: [
+      { unit: "Unit 1: Data Handling", topics: [
+        "Pandas advanced",
+        "Merging and grouping"
+      ]},
+      { unit: "Unit 2: Data Visualization", topics: [
+        "Line, bar, histogram, scatter, pie"
+      ]},
+      { unit: "Unit 3: Database Management", topics: [
+        "SQL joins",
+        "Constraints and keys"
+      ]},
+      { unit: "Unit 4: IT Applications", topics: [
+        "Data security, cyber ethics",
+        "Case studies"
+      ]},
+    ],
+    registerLink: "",
+  },
+
+  "12-ai": {
+    title: "Artificial Intelligence",
+    units: [
+      { unit: "Unit 1: ML Models", topics: [
+        "Regression and Classification",
+        "Model training and evaluation"
+      ]},
+      { unit: "Unit 2: Neural Networks", topics: [
+        "Perceptron and Multi-layer NN",
+        "Activation functions"
+      ]},
+      { unit: "Unit 3: NLP", topics: [
+        "Text preprocessing",
+        "Tokenization, Classification"
+      ]},
+      { unit: "Unit 4: Ethics in AI", topics: [
+        "Bias, fairness, employment impact"
+      ]},
+    ],
+    registerLink: "",
+  },
+
+  "12-cyber-security": {
+    title: "Cyber Security",
+    units: [
+      { unit: "Unit 1: Threats", topics: [
+        "Advanced cyber threats",
+        "Phishing, Trojans, Worms"
+      ]},
+      { unit: "Unit 2: Cryptography", topics: [
+        "Symmetric vs Asymmetric encryption",
+        "Hashing basics"
+      ]},
+      { unit: "Unit 3: Forensics", topics: [
+        "Cyber forensics basics",
+        "Tracking digital evidence"
+      ]},
+      { unit: "Unit 4: Cyber Laws", topics: [
+        "IT Act 2000",
+        "Recent amendments"
+      ]},
     ],
     registerLink: "",
   },
@@ -45,10 +205,12 @@ const CBSE_SYLLABUS = {
 
 export default function CBSESyllabus() {
   const { grade, subject } = useParams();
-  const sCfg = CBSE_SYLLABUS[subject];
+  const key = `${grade}-${subject}`; // matches "11-computer-science"
+  const sCfg = CBSE_SYLLABUS[key];
+
   const [modalOpen, setModalOpen] = useState(false);
 
-  // scroll-lock body while modal open
+  // Scroll-lock body while modal is open
   useEffect(() => {
     const body = document?.body;
     if (!body) return;
@@ -96,7 +258,9 @@ export default function CBSESyllabus() {
           <p className="board-main-subtitle">Unknown subject for Class {grade}.</p>
         </section>
         <div className="board-content">
-          <Link to={`/cbse/class-${grade}`} className="primary-btn">← Back to Class {grade}</Link>
+          <Link to={`/cbse/class-${grade}`} className="primary-btn">
+            ← Back to Class {grade}
+          </Link>
         </div>
       </div>
     );
@@ -112,13 +276,13 @@ export default function CBSESyllabus() {
       {/* Hero */}
       <section className="board-hero">
         <div className="board-logo-container">
-          <img src="/pictures/CBSE LOGO FINAL.png" alt="CBSE Logo" className="board-main-logo" />
+          <img src="/pictures/cbse.png" alt="CBSE Logo" className="board-main-logo cbse-logo" />
           <h1 className="board-main-title">CBSE — Class {grade}</h1>
           <p className="board-main-subtitle">{sCfg.title}</p>
         </div>
       </section>
 
-      {/* Syllabus */}
+      {/* Syllabus table */}
       <div className="board-content">
         <section className="board-section">
           <div className="table-header">
@@ -141,7 +305,9 @@ export default function CBSESyllabus() {
                   <tr key={i}>
                     <td><strong>{unit}</strong></td>
                     <td>
-                      <ul>{(topics || []).map((t, j) => <li key={j}>{t}</li>)}</ul>
+                      <ul>
+                        {(topics || []).map((t, j) => <li key={j}>{t}</li>)}
+                      </ul>
                     </td>
                   </tr>
                 ))}
