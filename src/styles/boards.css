@@ -650,7 +650,7 @@
   display: grid;
   place-items: center;
   background: #eef2ff;   /* indigo-50 */
-  color: #4338ca;        /* indigo-700 */
+  color: blue;        
   font-weight: 800;
   font-size: 1.25rem;
 }

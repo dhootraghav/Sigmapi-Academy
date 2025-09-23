@@ -439,7 +439,7 @@ export default function ICSESyllabus() {
       <section className="board-hero">
         <div className="board-logo-container">
           <img src="/pictures/isc.png" alt="ICSE Logo" className="board-main-logo icse-logo" />
-          <h1 className="board-main-title">ICSE — Class {grade}</h1>
+          <h1 className="board-main-title">ICSE/ISC — Class {grade}</h1>
           <p className="board-main-subtitle">{sCfg.title}</p>
         </div>
       </section>

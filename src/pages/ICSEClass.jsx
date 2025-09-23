@@ -217,7 +217,7 @@ export default function ICSEClass() {
             alt="ICSE Logo"
             className="board-main-logo icse-logo"
           />
-          <h1 className="board-main-title">ICSE — Class {grade}</h1>
+          <h1 className="board-main-title">ICSE/ISC — Class {grade}</h1>
           <p className="board-main-subtitle">Choose a subject</p>
         </div>
       </section>
@@ -226,7 +226,7 @@ export default function ICSEClass() {
         <section className="curriculum-section subject-panel">
           <div className="curriculum-header">
             <Link to="/icse" className="explore-link">
-              ← Back to ICSE overview
+              ← Back to ICSE/ISC overview
             </Link>
           </div>
 

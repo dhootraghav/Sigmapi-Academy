@@ -8,7 +8,7 @@ export default function ICSE() {
       <section className="board-hero">
         <div className="board-logo-container">
           <img src="/pictures/isc.png" alt="ICSE Logo" className="board-main-logo icse-logo" />
-          <h1 className="board-main-title">ICSE</h1>
+          <h1 className="board-main-title">ICSE/ISC</h1>
           <p className="board-main-subtitle">Indian Certificate of Secondary Education</p>
         </div>
       </section>
@@ -43,17 +43,17 @@ export default function ICSE() {
 
         {/* Merged Why Choose + Teaching Approach Section */}
         <section className="board-section">
-          <h2>Why Choose Our ICSE Program?</h2>
+          <h2>Why Choose Our ICSE/ISC Program?</h2>
           <p>
             <strong>In-depth curriculum coverage that no one else teaches!</strong> We go beyond surface-level 
-            learning to provide comprehensive understanding of every ICSE topic. Our program is designed 
+            learning to provide comprehensive understanding of every ICSE/ISC topic. Our program is designed 
             to align perfectly with your school syllabus while building deeper conceptual knowledge.
           </p>
           
           <div className="board-features">
             <div className="board-feature">
               <h3>🎯 Complete Syllabus Coverage</h3>
-              <p>Every single ICSE topic covered in depth - nothing left out. We ensure 100% alignment with your school curriculum.</p>
+              <p>Every single ICSE/ISC topic covered in depth - nothing left out. We ensure 100% alignment with your school curriculum.</p>
             </div>
             <div className="board-feature">
               <h3>👨‍🏫 One-on-One Online Classes</h3>
@@ -65,7 +65,7 @@ export default function ICSE() {
             </div>
             <div className="board-feature">
               <h3>🎓 Expert Mentor Guidance</h3>
-              <p>Learn from a mentor with years of experience, guiding you through every step of your ICSE journey.</p>
+              <p>Learn from a mentor with years of experience, guiding you through every step of your ICSE/ISC journey.</p>
             </div>
             <div className="board-feature">
               <h3>📚 Detailed Notes</h3>
