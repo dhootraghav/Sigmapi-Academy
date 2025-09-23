@@ -109,7 +109,7 @@ const ICSE_SUBJECTS = {
         "Electrical and Control Systems",
         "Applications of Robotic Systems",
       ],
-      registerLink: "",
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSfRRV8YETiF2id31QPFfL05Z2Rchcm7pTq0gtqQmyAFQ-64jA/viewform?embedded=true%22",
     },
   ],
   12: [
@@ -155,7 +155,7 @@ const ICSE_SUBJECTS = {
         "Rovers, Chandrayaan, Gaganyaan",
       ],
       registerLink:
-        "https://docs.google.com/forms/d/e/1FAIpQLSdq4Sxhr5lQGeK3fB8xhdjcm_a9gtNjgYyDy27vB9B0-FPrPQ/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSdq4Sxhr5lQGeK3fB8xhdjcm_a9gtNjgYyDy27vB9B0-FPrPQ/viewform?embedded=true%22",
     },
   ],
 };

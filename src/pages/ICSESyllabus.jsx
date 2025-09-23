@@ -291,7 +291,7 @@ const ICSE_SYLLABUS = {
         "Manipulators, Mobile Robots, Drones"
       ]},
     ],
-    registerLink: "",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSfRRV8YETiF2id31QPFfL05Z2Rchcm7pTq0gtqQmyAFQ-64jA/viewform?embedded=true%22",
   },
 
   // ---------------- CLASS 12 ----------------
@@ -360,7 +360,7 @@ const ICSE_SYLLABUS = {
         "Rovers, Chandrayaan, Gaganyaan Humanoid"
       ]},
     ],
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdq4Sxhr5lQGeK3fB8xhdjcm_a9gtNjgYyDy27vB9B0-FPrPQ/viewform",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdq4Sxhr5lQGeK3fB8xhdjcm_a9gtNjgYyDy27vB9B0-FPrPQ/viewform?embedded=true%22",
   },
 };
 
