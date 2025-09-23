@@ -258,30 +258,40 @@ export default function Home() {
         </div>
         <br /><br />
       </section>
-
-      {/* REGISTER MODAL (uses your classes) */}
-      {modalOpen && (
-        <div className="custom-modal" id="registerModal" style={{ display: "block" }}>
-          <div className="modal-overlay" id="modalOverlay" onClick={() => setModalOpen(false)} />
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <img src="/pictures/SigmaPi Logo.png" width="30" height="30" alt="Logo" />
-              <span className="close-button" id="closeModal" onClick={() => setModalOpen(false)}>
-                &times;
-              </span>
-            </div>
-            <div className="modal-body">
-              <iframe
-                style={{ width: "100%", height: "70vh", border: "none" }}
-                src="https://docs.google.com/forms/d/e/1FAIpQLSe_km_Qpf4Vh0bY7QELvZ0QbQHFLHU4Y3b3SQg3X26aIQXtNw/viewform?embedded=true"
-                title="Register Form"
-              >
-                Loading…
-              </iframe>
-            </div>
-          </div>
-        </div>
-      )}
+{modalOpen && (
+  <div className="custom-modal" id="registerModal">
+    <div
+      className="modal-overlay"
+      id="modalOverlay"
+      onClick={() => setModalOpen(false)}
+    />
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-header">
+        <img
+          src="/pictures/SigmaPi Logo.png"
+          width="30"
+          height="30"
+          alt="Logo"
+        />
+        <span
+          className="close-button"
+          id="closeModal"
+          onClick={() => setModalOpen(false)}
+        >
+          &times;
+        </span>
+      </div>
+      <div className="modal-body">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSe_km_Qpf4Vh0bY7QELvZ0QbQHFLHU4Y3b3SQg3X26aIQXtNw/viewform?embedded=true"
+          title="Register Form"
+        >
+          Loading…
+        </iframe>
+      </div>
+    </div>
+  </div>
+)}
     </>
   );
 }

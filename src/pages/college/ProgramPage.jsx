@@ -137,29 +137,49 @@ export default function ProgramPage({
 
       {/* REGISTER MODAL — matches your Home behavior */}
       {modalOpen && (
-        <div className="custom-modal" id="registerModal" style={{ display: "block" }}>
-          <div className="modal-overlay" id="modalOverlay" onClick={() => setModalOpen(false)} />
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <img src="/pictures/SigmaPi Logo.png" width="30" height="30" alt="Logo" />
-              <span className="close-button" id="closeModal" onClick={() => setModalOpen(false)}>×</span>
-            </div>
-            <div className="modal-body">
-              {iframeSrc ? (
-                <iframe
-                  style={{ width: "100%", height: "70vh", border: "none" }}
-                  src={iframeSrc}
-                  title={`${title} — Register Form`}
-                >
-                  Loading…
-                </iframe>
-              ) : (
-                <p style={{ padding: "1rem" }}>Registration link not configured.</p>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+  <div className="custom-modal" id="registerModal">
+    {/* Overlay */}
+    <div
+      className="modal-overlay"
+      onClick={() => setModalOpen(false)}
+    />
+
+    {/* Modal Content */}
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-header">
+        <img
+          src="/pictures/SigmaPi Logo.png"
+          width="30"
+          height="30"
+          alt="Logo"
+        />
+        <span
+          className="close-button"
+          onClick={() => setModalOpen(false)}
+        >
+          &times;
+        </span>
+      </div>
+
+      <div className="modal-body">
+        {registerLink ? (
+          <iframe
+            src={`${registerLink}?embedded=true`}
+            title={`${title} — Register Form`}
+            style={{ width: "100%", height: "70vh", border: "none" }}
+          >
+            Loading…
+          </iframe>
+        ) : (
+          <p style={{ padding: "1rem" }}>
+            Registration link not configured.
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }

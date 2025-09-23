@@ -117,25 +117,40 @@ export default function IGCSE() {
 
       {/* Modal (same CSS classes as Home) */}
       {modalOpen && (
-        <div className="custom-modal" id="registerModal" style={{ display: "block" }}>
-          <div className="modal-overlay" onClick={() => setModalOpen(false)} />
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <img src="/pictures/SigmaPi Logo.png" width="30" height="30" alt="Logo" />
-              <span className="close-button" onClick={() => setModalOpen(false)}>×</span>
-            </div>
-            <div className="modal-body">
-              {iframeSrc ? (
-                <iframe style={{ width: "100%", height: "70vh", border: "none" }} src={iframeSrc} title="IGCSE Registration">
-                  Loading…
-                </iframe>
-              ) : (
-                <p style={{ padding: "1rem" }}>Registration link not configured.</p>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+  <div className="custom-modal" id="registerModal">
+    <div
+      className="modal-overlay"
+      id="modalOverlay"
+      onClick={() => setModalOpen(false)}
+    />
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-header">
+        <img
+          src="/pictures/SigmaPi Logo.png"
+          width="30"
+          height="30"
+          alt="Logo"
+        />
+        <span
+          className="close-button"
+          id="closeModal"
+          onClick={() => setModalOpen(false)}
+        >
+          &times;
+        </span>
+      </div>
+      <div className="modal-body">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeyZgTWWf5IFBLrn-JGaN14JcjDvOpE67p3-QlZyBhwgTXuGw/viewform?embedded=true"
+          title="Register Form"
+        >
+          Loading…
+        </iframe>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }

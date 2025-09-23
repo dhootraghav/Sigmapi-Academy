@@ -448,10 +448,10 @@ export default function ICSESyllabus() {
       <div className="board-content">
         <section className="board-section">
           <div className="table-header">
-            <h2>Detailed Syllabus</h2>
             <Link to={`/icse/class/${grade}`} className="explore-link">
-              ← Back to Class {grade} subjects
+              ← Back to Class {grade} 
             </Link>
+            <h2>Detailed Syllabus</h2>
           </div>
 
           <div className="table-responsive">
@@ -495,33 +495,60 @@ export default function ICSESyllabus() {
         </section>
       </div>
 
-      {/* Register modal */}
-      {modalOpen && (
-        <div className="custom-modal" id="registerModal" style={{ display: "block" }}>
-          <div className="modal-overlay" onClick={() => setModalOpen(false)} />
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <img src="/pictures/SigmaPi Logo.png" width="30" height="30" alt="Logo" />
-              <span className="close-button" onClick={() => setModalOpen(false)}>×</span>
-            </div>
-            <div className="modal-body">
-              {iframeSrc ? (
-                <iframe
-                  style={{ width: "100%", height: "70vh", border: "none" }}
-                  src={iframeSrc}
-                  title={`${sCfg.title} Registration`}
-                >
-                  Loading…
-                </iframe>
-              ) : (
-                <p style={{ padding: "0.75rem 0" }}>
-                  Registration link not configured.
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Register Modal */}
+{modalOpen && (
+  <div className="custom-modal" id="registerModal">
+    {/* Overlay */}
+    <div
+      className="modal-overlay"
+      onClick={() => setModalOpen(false)}
+    />
+
+    {/* Content */}
+    <div
+      className="modal-content"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className="modal-header">
+        <img
+          src="/pictures/SigmaPi Logo.png"
+          width="30"
+          height="30"
+          alt="Logo"
+        />
+        <span
+          className="close-button"
+          onClick={() => setModalOpen(false)}
+        >
+          &times;
+        </span>
+      </div>
+
+      <div className="modal-body">
+        {iframeSrc ? (
+          <iframe
+            src={iframeSrc}
+            title={`${sCfg.title} Registration`}
+            style={{
+              width: "100%",
+              height: "70vh",
+              border: "none",
+              display: "block",
+              margin: "0 auto",
+            }}
+          >
+            Loading…
+          </iframe>
+        ) : (
+          <p style={{ padding: "1rem", textAlign: "center" }}>
+            Registration link not configured.
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }

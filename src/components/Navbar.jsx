@@ -31,7 +31,7 @@ export default function Navbar() {
                 <NavLink to="/" end>Home</NavLink>
               </li>
 
-              <li className="nav-item dropdown">
+              <li className={`nav-item dropdown ${isActive('/school') || isActive('/college') ? 'active' : ''}`}>
                 <span className="dropbtn" style={{ cursor: "default" }}>Courses</span>
                 <ul className="dropdown-menu">
                   <div>
@@ -40,6 +40,7 @@ export default function Navbar() {
                   </div>
                 </ul>
               </li>
+
 
               <li className={`nav-item ${isActive('/testimonials') ? 'active' : ''}`}><NavLink to="/testimonials">Testimonials</NavLink></li>
               <li className={`nav-item ${isActive('/contact') ? 'active' : ''}`}><NavLink to="/contact">Contact</NavLink></li>

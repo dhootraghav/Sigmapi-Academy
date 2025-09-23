@@ -5,113 +5,289 @@ import "../styles/boards.css";
 
 /** Placeholder syllabi per subject — edit freely */
 const CBSE_SYLLABUS = {
+  // ---------------- CLASS 9 ----------------
+  "9-computer-applications": {
+    title: "Computer Applications",
+    units: [
+      { unit: "Unit 1: Basics of Information Technology", topics: [
+        "Components of a computer system: CPU, memory, storage, I/O devices",
+        "Types of memory: RAM, ROM, cache, secondary",
+        "Storage devices: HDD, SSD, DVD, flash drives",
+        "Networking basics: PAN, LAN, MAN, WAN; wired vs wireless",
+        "Multimedia: images, audio, video, animation"
+      ]},
+      { unit: "Unit 2: Cyber-safety", topics: [
+        "Safe browsing & social networking",
+        "Identity protection & password safety",
+        "Privacy, confidentiality & reporting cybercrimes",
+        "Malware types: viruses, spyware, adware"
+      ]},
+      { unit: "Unit 3: Office Tools", topics: [
+        "Word processing: formatting text, tables, headers/footers",
+        "Presentation software: slide design, animations, transitions",
+        "Spreadsheets: formulas, functions, charts"
+      ]},
+    ],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScEoAUbR9nPl549lH0ScUVRiljDtnNlRfgxdxfLH3Rq61N_eg/viewform?embedded=true"
+  },
+
+  "9-ai": {
+    title: "Artificial Intelligence",
+    units: [
+      { unit: "Unit 1: AI Reflection, Project Cycle & Ethics", topics: [
+        "Introduction to AI & its real-life applications",
+        "Realms of AI: Computer Vision, NLP, Data Science",
+        "AI project cycle: scoping, data, modeling, evaluation",
+        "Ethics: bias, fairness, transparency, access"
+      ]},
+      { unit: "Unit 2: Data Literacy", topics: [
+        "Data privacy & security",
+        "Acquisition, processing, interpretation",
+        "Visualization & dashboards"
+      ]},
+      { unit: "Unit 3: Math for AI", topics: [
+        "Statistics basics: mean, median, mode, std dev",
+        "Probability concepts & real-life applications"
+      ]},
+      { unit: "Unit 4: Introduction to Generative AI", topics: [
+        "Generative vs conventional AI",
+        "Applications, benefits & ethical challenges"
+      ]},
+      { unit: "Unit 5: Python Basics", topics: [
+        "Syntax, variables, operators",
+        "Input/output functions",
+        "Conditionals & loops",
+        "Intro to lists"
+      ]},
+    ],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTrJ0ICsq37o341a5ZlXgS_EnU1qviido3T8q7yrvXJcxbeQ/viewform?embedded=true"
+  },
+
+  // ---------------- CLASS 10 ----------------
+  "10-computer-applications": {
+    title: "Computer Applications",
+    units: [
+      { unit: "Unit 1: Networking", topics: [
+        "Internet basics: WWW, web servers, clients",
+        "Protocols: TCP/IP, SMTP, POP3, HTTP/HTTPS",
+        "Remote login & file transfer: SSH, FTP, Telnet",
+        "Mobile technologies: 3G, 4G, 5G"
+      ]},
+      { unit: "Unit 2: HTML", topics: [
+        "HTML basics: structure, tags, formatting",
+        "Lists, tables, forms, images, media",
+        "CSS basics for styling webpages"
+      ]},
+      { unit: "Unit 3: Cyber Ethics", topics: [
+        "Responsible digital behaviour & netiquette",
+        "Software licenses, open source & IPR",
+        "E-commerce: privacy, fraud, secure data"
+      ]},
+    ],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScZ8KfVkeBPQgqmcKRk2Cy6DMgjTjIbX3RD48Bd2rW3MKE_kA/viewform?embedded=true"
+  },
+
+  "10-ai": {
+    title: "Artificial Intelligence",
+    units: [
+      { unit: "Unit 1: Introduction to AI", topics: [
+        "Human vs machine intelligence",
+        "AI domains: CV, NLP, Data Science",
+        "Applications & ethics"
+      ]},
+      { unit: "Unit 2: AI Project Cycle", topics: [
+        "Problem scoping & planning",
+        "Rule-based vs learning-based models",
+        "Evaluation metrics"
+      ]},
+      { unit: "Unit 3: Advanced Python", topics: [
+        "Interactive vs script mode",
+        "Control structures & functions",
+        "Problem-solving with Python"
+      ]},
+      { unit: "Unit 4: Data Science", topics: [
+        "Basics of acquisition, exploration & visualization",
+        "NumPy, Pandas, Matplotlib",
+        "Intro to statistics & KNN algorithm"
+      ]},
+      { unit: "Unit 5: Computer Vision", topics: [
+        "Image basics: pixels, grayscale, RGB",
+        "Object detection & segmentation"
+      ]},
+      { unit: "Unit 6: NLP Basics", topics: [
+        "Applications: chatbots, sentiment analysis, summarization",
+        "Bag-of-Words model, text normalization"
+      ]},
+    ],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScwiDjkHxCTDfPM7a-ucGKZ2-Pb1GvG0ESH-trANyzHueMx6Q/viewform?embedded=tru"
+  },
+
   // ---------------- CLASS 11 ----------------
   "11-computer-science": {
     title: "Computer Science",
     units: [
-      { unit: "Unit 1: Number Systems & Logic", topics: [
-        "Binary, Octal, Decimal, Hexadecimal",
-        "1’s & 2’s complement arithmetic",
-        "Boolean algebra, Logic Gates"
+      { unit: "Unit 1: Computer Systems & Organisation", topics: [
+        "CPU, memory, I/O devices",
+        "Types of software: system, application, programming tools",
+        "Boolean logic, number systems, encoding schemes"
       ]},
-      { unit: "Unit 2: Python Programming", topics: [
-        "Data types, Variables, Operators",
-        "Control Structures (if, loops)",
-        "Functions & Recursion",
-        "String and List operations"
+      { unit: "Unit 2: Computational Thinking & Programming – I", topics: [
+        "Problem-solving steps, flowcharts, pseudocode",
+        "Basics of Python: data types, operators, errors",
+        "Control structures: conditionals, loops",
+        "Strings, Lists, Tuples, Dictionaries"
       ]},
-      { unit: "Unit 3: Data Structures", topics: [
-        "Stacks and Queues",
-        "Implementation using Python"
-      ]},
-      { unit: "Unit 4: File Handling", topics: [
-        "Text and Binary files",
-        "Reading, Writing, Updating"
-      ]},
-      { unit: "Unit 5: DBMS", topics: [
-        "Relational databases",
-        "SQL basics: SELECT, INSERT, UPDATE, DELETE"
+      { unit: "Unit 3: Society, Law and Ethics", topics: [
+        "Digital footprints, etiquette",
+        "Data protection and IPR",
+        "Cybercrime and safety",
+        "E-waste and IT Act"
       ]},
     ],
-    registerLink: "",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScwNbfOzBHsRb7xNmaFYVqALucMAqYut6UzZDPNKSOm8Ochxw/viewform?embedded=true"
   },
 
   "11-informatics-practices": {
     title: "Informatics Practices",
     units: [
-      { unit: "Unit 1: Python Basics", topics: [
-        "Variables, Data types, Operators",
-        "Conditional statements, Loops"
+      { unit: "Unit 1: Introduction to Computer System", topics: [
+        "Evolution of computing",
+        "Components of a computer system",
+        "Memory types",
+        "Software types"
       ]},
-      { unit: "Unit 2: Data Handling", topics: [
-        "NumPy arrays",
-        "Pandas series and dataframes"
+      { unit: "Unit 2: Python Programming", topics: [
+        "Execution modes",
+        "Data types and operators",
+        "Control structures",
+        "Lists and Dictionaries",
+        "Intro to NumPy"
       ]},
-      { unit: "Unit 3: Data Visualization", topics: [
-        "Matplotlib charts: line, bar, histogram, scatter"
+      { unit: "Unit 3: Database Concepts & SQL", topics: [
+        "Relational data model",
+        "SQL: CREATE, SELECT, INSERT, DELETE, UPDATE"
       ]},
-      { unit: "Unit 4: Database Concepts", topics: [
-        "RDBMS concepts",
-        "Basic SQL queries"
-      ]},
-      { unit: "Unit 5: IT Applications", topics: [
-        "Data security and privacy",
-        "Social impacts of IT"
+      { unit: "Unit 4: Emerging Trends", topics: [
+        "AI, ML, NLP",
+        "Robotics, IoT, Big Data",
+        "Cloud computing, Blockchain"
       ]},
     ],
-    registerLink: "",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScx9BWJ6eZSVkFvLDMC9bDVwkFRA2_f8aU4Zhp6gaZp2Z0pDw/viewform?embedded=true"
   },
 
   "11-ai": {
     title: "Artificial Intelligence",
     units: [
-      { unit: "Unit 1: Introduction to AI", topics: [
-        "Definition and scope",
-        "AI vs Human Intelligence",
-        "Applications of AI"
+      { unit: "Unit 1: Artificial Intelligence for Everyone", topics: [
+        "Introduction to AI in daily life",
+        "AI in health, education, business"
       ]},
-      { unit: "Unit 2: Machine Learning Basics", topics: [
-        "Supervised vs Unsupervised",
-        "Simple Regression",
-        "Classification overview"
+      { unit: "Unit 2: Unlocking Your Future in AI", topics: [
+        "Careers and roles",
+        "Future opportunities in AI"
       ]},
-      { unit: "Unit 3: Data Science Concepts", topics: [
-        "Data collection and processing",
-        "Data visualization basics"
+      { unit: "Unit 3: Python Programming", topics: [
+        "Data types, variables, operators",
+        "Control flow and loops",
+        "Functions"
       ]},
-      { unit: "Unit 4: Ethics in AI", topics: [
-        "Bias and fairness",
-        "Accountability and transparency"
+      { unit: "Unit 4: Introduction to Capstone Project", topics: [
+        "Scoping problems",
+        "Project planning basics"
       ]},
-    ],
-    registerLink: "",
-  },
-
-  "11-cyber-security": {
-    title: "Cyber Security",
-    units: [
-      { unit: "Unit 1: Fundamentals", topics: [
-        "Need for security",
-        "Digital footprints",
-        "Types of threats"
+      { unit: "Unit 5: Data Literacy", topics: [
+        "Data collection",
+        "Data processing and visualization"
       ]},
-      { unit: "Unit 2: Cyber Crimes", topics: [
-        "Phishing, Hacking, Malware",
-        "Ransomware, Cyber bullying"
+      { unit: "Unit 6: Machine Learning Algorithms", topics: [
+        "Regression and classification basics",
+        "Model evaluation"
       ]},
-      { unit: "Unit 3: Safety Measures", topics: [
-        "Identity protection",
-        "Safe browsing habits"
+      { unit: "Unit 7: Leveraging Linguistics & Computer Science", topics: [
+        "Basics of NLP",
+        "Applications: chatbots, translation"
       ]},
-      { unit: "Unit 4: Laws & Ethics", topics: [
-        "IT Act",
-        "Cyber laws in India"
+      { unit: "Unit 8: AI Ethics and Values", topics: [
+        "Bias in AI systems",
+        "Transparency and accountability"
       ]},
     ],
-    registerLink: "",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSeqwJQBrEkDjT13duldZcldnc1iN3tWmehKlK6v9NV7jjSZ4g/viewform?embedded=true"
   },
 
   // ---------------- CLASS 12 ----------------
+  "12-informatics-practices": {
+    title: "Informatics Practices",
+    units: [
+      { unit: "Unit 1: Data Handling using Pandas – I", topics: [
+        "Pandas Series & DataFrames",
+        "Creating Series from arrays, dictionaries",
+        "DataFrame creation from dict, list, CSV files",
+        "Row/column operations: add, delete, rename",
+        "Importing/exporting data from CSV",
+        "Data Visualization basics with Matplotlib: line plots, bar graphs, histograms"
+      ]},
+      { unit: "Unit 2: Database Query using SQL", topics: [
+        "Revision of DBMS & SQL concepts from Class XI",
+        "Math functions: POWER(), ROUND(), MOD()",
+        "Text functions: UCASE(), LCASE(), MID(), LENGTH(), etc.",
+        "Date functions: NOW(), DATE(), MONTH(), YEAR(), DAY()",
+        "Aggregate functions: MAX(), MIN(), AVG(), SUM(), COUNT()",
+        "GROUP BY, HAVING, ORDER BY",
+        "Equi-join and working with multiple tables"
+      ]},
+      { unit: "Unit 3: Introduction to Computer Networks", topics: [
+        "Network types: PAN, LAN, MAN, WAN",
+        "Network devices: modem, hub, switch, router, gateway",
+        "Topologies: Star, Bus, Tree, Mesh",
+        "Introduction to Internet: URL, WWW, Web, Email, Chat, VoIP",
+        "Websites: static vs dynamic, hosting, browsers & settings"
+      ]},
+      { unit: "Unit 4: Societal Impacts", topics: [
+        "Digital footprint and online etiquette",
+        "Intellectual Property Rights & licensing",
+        "Cybercrime & Indian IT Act overview",
+        "E-waste management & hazards",
+        "Health concerns from technology usage"
+      ]},
+    ],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSfVmeYbpLMWC1Hg67sf_uf_KXXxe45oA8g4nzd69vvjHoxTXg/viewform?embedded=true"
+  },
+
+  "12-ai": {
+    title: "Artificial Intelligence",
+    units: [
+      { unit: "Unit 1: Capstone Project", topics: [
+        "Problem decomposition with Design Thinking",
+        "Identifying data requirements",
+        "Modeling approaches & algorithms",
+        "Evaluation metrics: RMSE, MSE, MAPE",
+        "Presenting findings through narrative"
+      ]},
+      { unit: "Unit 2: Model Lifecycle", topics: [
+        "Training, testing, and validation",
+        "Hyperparameters overview",
+        "Tools and platforms for AI models",
+        "Model stages: Build, Deploy, Retrain"
+      ]},
+      { unit: "Unit 3: Storytelling Through Data", topics: [
+        "Importance of storytelling in AI & decision-making",
+        "Choosing the right charts: wordclouds, bar, candlestick, maps",
+        "Ethical considerations in communication",
+        "Storytelling during data exploration & model evaluation"
+      ]},
+      { unit: "Unit 4: Advanced AI Applications", topics: [
+        "ML models – regression, classification",
+        "Neural Networks & Deep Learning",
+        "Natural Language Processing basics",
+        "Computer Vision concepts: detection, segmentation",
+        "Ethics & bias in AI applications"
+      ]},
+    ],
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdzyOUf8aT_5DeM5NAr_Og2HCdyXpcEpGTEQE10rvFQlzuNvw/viewform?embedded=true"
+  },
+
   "12-computer-science": {
     title: "Computer Science",
     units: [
@@ -132,76 +308,10 @@ const CBSE_SYLLABUS = {
         "Protocols and topologies"
       ]},
     ],
-    registerLink: "",
-  },
-
-  "12-informatics-practices": {
-    title: "Informatics Practices",
-    units: [
-      { unit: "Unit 1: Data Handling", topics: [
-        "Pandas advanced",
-        "Merging and grouping"
-      ]},
-      { unit: "Unit 2: Data Visualization", topics: [
-        "Line, bar, histogram, scatter, pie"
-      ]},
-      { unit: "Unit 3: Database Management", topics: [
-        "SQL joins",
-        "Constraints and keys"
-      ]},
-      { unit: "Unit 4: IT Applications", topics: [
-        "Data security, cyber ethics",
-        "Case studies"
-      ]},
-    ],
-    registerLink: "",
-  },
-
-  "12-ai": {
-    title: "Artificial Intelligence",
-    units: [
-      { unit: "Unit 1: ML Models", topics: [
-        "Regression and Classification",
-        "Model training and evaluation"
-      ]},
-      { unit: "Unit 2: Neural Networks", topics: [
-        "Perceptron and Multi-layer NN",
-        "Activation functions"
-      ]},
-      { unit: "Unit 3: NLP", topics: [
-        "Text preprocessing",
-        "Tokenization, Classification"
-      ]},
-      { unit: "Unit 4: Ethics in AI", topics: [
-        "Bias, fairness, employment impact"
-      ]},
-    ],
-    registerLink: "",
-  },
-
-  "12-cyber-security": {
-    title: "Cyber Security",
-    units: [
-      { unit: "Unit 1: Threats", topics: [
-        "Advanced cyber threats",
-        "Phishing, Trojans, Worms"
-      ]},
-      { unit: "Unit 2: Cryptography", topics: [
-        "Symmetric vs Asymmetric encryption",
-        "Hashing basics"
-      ]},
-      { unit: "Unit 3: Forensics", topics: [
-        "Cyber forensics basics",
-        "Tracking digital evidence"
-      ]},
-      { unit: "Unit 4: Cyber Laws", topics: [
-        "IT Act 2000",
-        "Recent amendments"
-      ]},
-    ],
-    registerLink: "",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdGQxYy8vTB4l0Byt5PYgn8Opkjdrc3dFjtkcytzyXccHR5tw/viewform?embedded=true"
   },
 };
+
 
 export default function CBSESyllabus() {
   const { grade, subject } = useParams();
@@ -276,7 +386,7 @@ export default function CBSESyllabus() {
       {/* Hero */}
       <section className="board-hero">
         <div className="board-logo-container">
-          <img src="/pictures/cbse.png" alt="CBSE Logo" className="board-main-logo cbse-logo" />
+          <img src="/pictures/CBSE LOGO FINAL.png" alt="CBSE Logo" className="board-main-logo cbse-logo" />
           <h1 className="board-main-title">CBSE — Class {grade}</h1>
           <p className="board-main-subtitle">{sCfg.title}</p>
         </div>
@@ -286,10 +396,10 @@ export default function CBSESyllabus() {
       <div className="board-content">
         <section className="board-section">
           <div className="table-header">
-            <h2>Detailed Syllabus</h2>
-            <Link to={`/cbse/class-${grade}`} className="explore-link">
-              ← Back to Class {grade} subjects
+            <Link to={`/cbse/class/${grade}`} className="explore-link">
+              ← Back to Class {grade}
             </Link>
+            <h2>Detailed Syllabus</h2>
           </div>
 
           <div className="table-responsive">
@@ -334,32 +444,57 @@ export default function CBSESyllabus() {
       </div>
 
       {/* Register modal */}
-      {modalOpen && (
-        <div className="custom-modal" id="registerModal" style={{ display: "block" }}>
-          <div className="modal-overlay" onClick={() => setModalOpen(false)} />
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <img src="/pictures/SigmaPi Logo.png" width="30" height="30" alt="Logo" />
-              <span className="close-button" onClick={() => setModalOpen(false)}>×</span>
-            </div>
-            <div className="modal-body">
-              {iframeSrc ? (
-                <iframe
-                  style={{ width: "100%", height: "70vh", border: "none" }}
-                  src={iframeSrc}
-                  title={`${sCfg.title} Registration`}
-                >
-                  Loading…
-                </iframe>
-              ) : (
-                <p style={{ padding: "0.75rem 0" }}>
-                  Registration link not configured.
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Register Modal */}
+{modalOpen && (
+  <div className="custom-modal" id="registerModal">
+    {/* Overlay */}
+    <div
+      className="modal-overlay"
+      onClick={() => setModalOpen(false)}
+    />
+
+    {/* Modal Content */}
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-header">
+        <img
+          src="/pictures/SigmaPi Logo.png"
+          width="30"
+          height="30"
+          alt="Logo"
+        />
+        <span
+          className="close-button"
+          onClick={() => setModalOpen(false)}
+        >
+          &times;
+        </span>
+      </div>
+
+      <div className="modal-body">
+        {iframeSrc ? (
+          <iframe
+            src={iframeSrc}
+            title={`${sCfg.title} Registration`}
+            style={{
+              width: "100%",
+              height: "70vh",
+              border: "none",
+              display: "block",
+              margin: "0 auto",
+            }}
+          >
+            Loading…
+          </iframe>
+        ) : (
+          <p style={{ padding: "1rem", textAlign: "center" }}>
+            Registration link not configured.
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }

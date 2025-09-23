@@ -551,36 +551,7 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
 }
-/* Modal */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 50;
-}
 
-.modal-content {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 12px;
-  max-width: 800px;
-  width: 90%;
-  position: relative;
-  animation: scaleUp 0.25s ease-in-out;
-}
-
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: none;
-  background: transparent;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
 
 @keyframes scaleUp {
   from { transform: scale(0.9); opacity: 0; }
@@ -693,11 +664,12 @@
 }
 .curriculum-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: .75rem;
+  flex-direction: column; /* stack vertically */
+  align-items: flex-start; /* left align, or use center for centering */
+  gap: 6px; /* space between items */
   margin-bottom: .75rem;
 }
+
 .curriculum-header h2 {
   font-size: 1.25rem;
   color: #0f172a;
@@ -797,11 +769,13 @@
 /* ---------- Syllabus table (WBSyllabus) ---------- */
 .table-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  flex-direction: column; /* stack items vertically */
+  align-items: flex-start; /* align to left (or center if you prefer) */
+  gap: 6px; /* small vertical spacing between them */
   margin-bottom: 10px;
 }
+
+
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -835,43 +809,6 @@
   justify-content: center;  /* center the Register button */
   gap: 12px;
 }
-
-/* ---------- Modal (Register) ---------- */
-.custom-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-}
-.modal-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.45);
-}
-.modal-content {
-  position: relative;
-  z-index: 70;
-  width: min(920px, 92vw);
-  margin: 6vh auto;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.35);
-  overflow: hidden;
-}
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-bottom: 1px solid #e5e7eb;
-}
-.close-button {
-  font-size: 24px;
-  line-height: 1;
-  cursor: pointer;
-  user-select: none;
-}
-.modal-body { padding: 0; }
 
 /* ---------- Features grid on WB landing ---------- */
 .board-features {
@@ -1033,5 +970,45 @@
   border-radius: 10px;
   padding: 10px 12px;
   min-height: 48px;
+}
+/* Subject cards container */
+.subject-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Each card */
+.subject-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Summary list inside the card */
+.subject-summary {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* ✅ Mobile adjustments */
+@media (max-width: 768px) {
+  .subject-cards {
+    grid-template-columns: 1fr;   /* 1 card per row */
+  }
+
+  .subject-card {
+    padding: 12px;
+  }
+
+  .subject-highlight {
+    font-size: 0.75rem;           /* smaller text */
+  }
 }
 

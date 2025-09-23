@@ -76,8 +76,6 @@ export default function College() {
         </div>
 
         <br />
-        <br />
-        <br />
 
         <div className="coursesc-flex-container">
           {COURSES.map((c) => (

@@ -4,34 +4,44 @@ import { useParams, Link } from "react-router-dom";
 import "../styles/boards.css";
 
 const CBSE_SUBJECTS = {
-  11: [
+  9: [
     {
-      slug: "computer-science",
-      title: "Computer Science",
-      img: "/pictures/computer system.jpeg",
-      summary: [
-        "Logic Gates & Boolean Algebra",
-        "Python Programming",
-        "Functions & Recursion",
-        "Data Structures – Stack, Queue",
-        "File Handling",
-        "Database Management System",
-      ],
-      registerLink: "", // add Google Form link
-    },
-    {
-      slug: "informatics-practices",
-      title: "Informatics Practices",
+      slug: "computer-applications",
+      title: "Computer Applications",
       img: "/pictures/programming.webp",
       summary: [
-        "Python Basics",
-        "NumPy, Pandas, Matplotlib",
-        "Database Concepts",
-        "SQL Queries",
-        "Data Handling & Visualization",
-        "Societal Impacts of IT",
+        "Basics of Information Technology",
+        "Cyber-safety",
+        "Office Tools"
       ],
-      registerLink: "",
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScEoAUbR9nPl549lH0ScUVRiljDtnNlRfgxdxfLH3Rq61N_eg/viewform?embedded=true"
+    },
+    {
+      slug: "ai",
+      title: "Artificial Intelligence",
+      img: "/pictures/ethics ai.png",
+      summary: [
+        "AI Reflection, Project Cycle & Ethics",
+        "Data Literacy",
+        "Math for AI",
+        "Introduction to Generative AI",
+        "Python Basics"
+      ],
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTrJ0ICsq37o341a5ZlXgS_EnU1qviido3T8q7yrvXJcxbeQ/viewform?embedded=true"
+    }
+  ],
+
+  10: [
+    {
+      slug: "computer-applications",
+      title: "Computer Applications",
+      img: "/pictures/programming.webp",
+      summary: [
+        "Networking",
+        "HTML",
+        "Cyber Ethics"
+      ],
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScZ8KfVkeBPQgqmcKRk2Cy6DMgjTjIbX3RD48Bd2rW3MKE_kA/viewform?embedded=true"
     },
     {
       slug: "ai",
@@ -39,88 +49,98 @@ const CBSE_SUBJECTS = {
       img: "/pictures/ethics ai.png",
       summary: [
         "Introduction to AI",
-        "Machine Learning Basics",
-        "AI Applications",
-        "Data Science Concepts",
-        "Ethics in AI",
-        "Case Studies",
+        "AI Project Cycle",
+        "Advanced Python",
+        "Data Science",
+        "Computer Vision",
+        "NLP Basics"
       ],
-      registerLink: "",
-    },
-    {
-      slug: "cyber-security",
-      title: "Cyber Security",
-      img: "/pictures/cybersecurity.jpg",
-      summary: [
-        "Fundamentals of Cyber Security",
-        "Digital Footprints",
-        "Cyber Crimes & Safety",
-        "Data Privacy & Protection",
-        "Malware & Prevention",
-        "Cyber Laws",
-      ],
-      registerLink: "",
-    },
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScwiDjkHxCTDfPM7a-ucGKZ2-Pb1GvG0ESH-trANyzHueMx6Q/viewform?embedded=tru"
+    }
   ],
-  12: [
+
+  11: [
     {
       slug: "computer-science",
       title: "Computer Science",
       img: "/pictures/computer system.jpeg",
       summary: [
-        "Python Advanced Programming",
-        "OOP Concepts",
-        "Stacks, Queues, Linked Lists",
-        "Database Management",
-        "SQL Advanced Queries",
-        "Networking Basics",
+        "Computer Systems & Organisation",
+        "Computational Thinking & Programming – I",
+        "Society, Law and Ethics"
       ],
-      registerLink: "",
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScwNbfOzBHsRb7xNmaFYVqALucMAqYut6UzZDPNKSOm8Ochxw/viewform?embedded=true"
     },
     {
       slug: "informatics-practices",
       title: "Informatics Practices",
       img: "/pictures/programming.webp",
       summary: [
-        "Data Handling using Pandas",
-        "Data Visualization",
-        "MySQL Database",
-        "Connecting Python with SQL",
-        "Cyber Ethics",
-        "IT Applications",
+        "Introduction to Computer System",
+        "Python Programming",
+        "Database Concepts & SQL",
+        "Emerging Trends"
       ],
-      registerLink: "",
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScx9BWJ6eZSVkFvLDMC9bDVwkFRA2_f8aU4Zhp6gaZp2Z0pDw/viewform?embedded=true"
     },
     {
       slug: "ai",
       title: "Artificial Intelligence",
       img: "/pictures/ethics ai.png",
       summary: [
-        "ML Models – Regression, Classification",
-        "Neural Networks",
-        "NLP Basics",
-        "AI in Real Life",
-        "Data Processing & Modeling",
-        "Ethics & Bias in AI",
+        "Artificial Intelligence for Everyone",
+        "Unlocking Your Future in AI",
+        "Python Programming",
+        "Introduction to Capstone Project",
+        "Data Literacy",
+        "Machine Learning Algorithms",
+        "Leveraging Linguistics & Computer Science",
+        "AI Ethics and Values"
       ],
-      registerLink: "",
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSeqwJQBrEkDjT13duldZcldnc1iN3tWmehKlK6v9NV7jjSZ4g/viewform?embedded=true"
+    }
+  ],
+
+  12: [
+    {
+      slug: "informatics-practices",
+      title: "Informatics Practices",
+      img: "/pictures/programming.webp",
+      summary: [
+        "Data Handling using Pandas – I",
+        "Database Query using SQL",
+        "Introduction to Computer Networks",
+        "Societal Impacts"
+      ],
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSfVmeYbpLMWC1Hg67sf_uf_KXXxe45oA8g4nzd69vvjHoxTXg/viewform?embedded=true"
     },
     {
-      slug: "cyber-security",
-      title: "Cyber Security",
-      img: "/pictures/cybersecurity.jpg",
+      slug: "ai",
+      title: "Artificial Intelligence",
+      img: "/pictures/ethics ai.png",
       summary: [
-        "Advanced Cyber Threats",
-        "Network Security",
-        "Cryptography Basics",
-        "Cyber Forensics",
-        "Cyber Laws & IT Act",
-        "Case Studies",
+        "Capstone Project",
+        "Model Lifecycle",
+        "Storytelling Through Data",
+        "Advanced AI Applications"
       ],
-      registerLink: "",
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdzyOUf8aT_5DeM5NAr_Og2HCdyXpcEpGTEQE10rvFQlzuNvw/viewform?embedded=true"
     },
-  ],
+    {
+      slug: "computer-science",
+      title: "Computer Science",
+      img: "/pictures/computer system.jpeg",
+      summary: [
+        "Computer Systems & Organisation",
+        "Computational Thinking & Programming – II",
+        "Data Structures & Algorithms",
+        "Society, Law and Ethics"
+      ],
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdGQxYy8vTB4l0Byt5PYgn8Opkjdrc3dFjtkcytzyXccHR5tw/viewform?embedded=true"
+    }
+  ]
 };
+
 
 export default function CBSEClass() {
   const { grade } = useParams(); // "11" | "12"
@@ -175,8 +195,8 @@ export default function CBSEClass() {
       <section className="board-hero">
         <div className="board-logo-container">
           <img
-            src="/pictures/cbse.png"
-            alt="CBSE Logo"
+            src="/pictures/CBSE LOGO FINAL.png"
+            alt="CBSE LOGO"
             className="board-main-logo cbse-logo"
           />
           <h1 className="board-main-title">CBSE — Class {grade}</h1>
@@ -187,7 +207,6 @@ export default function CBSEClass() {
       <div className="board-content">
         <section className="curriculum-section subject-panel">
           <div className="curriculum-header">
-            <h2>Subjects</h2>
             <Link to="/cbse" className="explore-link">
               ← Back to CBSE overview
             </Link>
@@ -247,38 +266,50 @@ export default function CBSEClass() {
         </section>
       </div>
 
-      {/* Register modal */}
       {modalOpen && (
-        <div className="custom-modal" id="registerModal" style={{ display: "block" }}>
-          <div className="modal-overlay" onClick={() => setModalOpen(false)} />
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <img
-                src="/pictures/SigmaPi Logo.png"
-                width="30"
-                height="30"
-                alt="Logo"
-              />
-              <span className="close-button" onClick={() => setModalOpen(false)}>
-                ×
-              </span>
-            </div>
-            <div className="modal-body">
-              {iframeSrc ? (
-                <iframe
-                  style={{ width: "100%", height: "70vh", border: "none" }}
-                  src={iframeSrc}
-                  title={`${subjectForRegister} Registration`}
-                />
-              ) : (
-                <p style={{ padding: "0.75rem 0" }}>
-                  Registration link not configured for this subject.
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+  <div className="custom-modal" id="registerModal">
+    {/* Dark overlay */}
+    <div
+      className="modal-overlay"
+      onClick={() => setModalOpen(false)}
+    />
+
+    {/* Modal content */}
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-header">
+        <img
+          src="/pictures/SigmaPi Logo.png"
+          width="30"
+          height="30"
+          alt="Logo"
+        />
+        <span
+          className="close-button"
+          onClick={() => setModalOpen(false)}
+        >
+          &times;
+        </span>
+      </div>
+
+      <div className="modal-body">
+        {iframeSrc ? (
+          <iframe
+            src={iframeSrc}
+            title={`${subjectForRegister} Registration`}
+            style={{ width: "100%", height: "70vh", border: "none" }}
+          >
+            Loading…
+          </iframe>
+        ) : (
+          <p style={{ padding: "1rem" }}>
+            Registration link not configured for this subject.
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }

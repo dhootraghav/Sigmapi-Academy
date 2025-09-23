@@ -7,7 +7,7 @@ const COURSES = [
     to: "/icse", // make these routes later; for now they'll 404 until you add pages
     img: "/pictures/poster1.png",
     badge: "Classes 9–12",
-    title: "ICSE Foundations",
+    title: "ICSE/ISC Foundations",
     desc: "Comprehensive course that builds strong foundations",
     alt: "ICSE",
   },
@@ -30,7 +30,7 @@ const COURSES = [
   {
     to: "/wb", // Updated to match the route we created
     img: "/pictures/poster4.png",
-    badge: "Class XI-XII",
+    badge: "Class 11-12",
     title: "Ace Your WB Board Exams",
     desc: "Tailored study notes for HS students with expert guidance",
     alt: "WBCHSE",
@@ -38,8 +38,8 @@ const COURSES = [
   {
     to: "/ap",
     img: "/pictures/poster5.png",
-    badge: "Class XI-XII",
-    title: "Build Deep Understanding",
+    badge: "Class 11-12",
+    title: "Advaced Placement (AP)",
     desc: "Designed to strengthen core concepts & critical thinking",
     alt: "Advanced Placement",
   },
@@ -58,7 +58,7 @@ export default function School() {
         <div style={{ textAlign: "center" }}>
           <span className="subject">SCHOOL&nbsp; BASED&nbsp; COURSES</span>
         </div>
-        <br /><br /><br />
+        <br />
 
         <div className="courses-flex-container">
           {COURSES.map((c) => (

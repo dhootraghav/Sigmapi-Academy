@@ -225,7 +225,6 @@ export default function ICSEClass() {
       <div className="board-content">
         <section className="curriculum-section subject-panel">
           <div className="curriculum-header">
-            <h2>Subjects</h2>
             <Link to="/icse" className="explore-link">
               ← Back to ICSE overview
             </Link>
@@ -282,48 +281,57 @@ export default function ICSEClass() {
         </section>
       </div>
 
-      {/* Register modal */}
-      {modalOpen && (
-        <div
-          className="custom-modal"
-          id="registerModal"
-          style={{ display: "block" }}
+      {/* Register Modal */}
+{modalOpen && (
+  <div className="custom-modal" id="registerModal">
+    {/* Overlay */}
+    <div
+      className="modal-overlay"
+      onClick={() => setModalOpen(false)}
+    />
+
+    {/* Modal Content */}
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-header">
+        <img
+          src="/pictures/SigmaPi Logo.png"
+          width="30"
+          height="30"
+          alt="Logo"
+        />
+        <span
+          className="close-button"
+          onClick={() => setModalOpen(false)}
         >
-          <div className="modal-overlay" onClick={() => setModalOpen(false)} />
-          <div
-            className="modal-content"
-            onClick={(e) => e.stopPropagation()}
+          &times;
+        </span>
+      </div>
+
+      <div className="modal-body">
+        {iframeSrc ? (
+          <iframe
+            src={iframeSrc}
+            title={`${subjectForRegister} Registration`}
+            style={{
+              width: "100%",
+              height: "70vh",
+              border: "none",
+              display: "block",
+              margin: "0 auto",
+            }}
           >
-            <div className="modal-header">
-              <img
-                src="/pictures/SigmaPi Logo.png"
-                width="30"
-                height="30"
-                alt="Logo"
-              />
-              <span
-                className="close-button"
-                onClick={() => setModalOpen(false)}
-              >
-                ×
-              </span>
-            </div>
-            <div className="modal-body">
-              {iframeSrc ? (
-                <iframe
-                  style={{ width: "100%", height: "70vh", border: "none" }}
-                  src={iframeSrc}
-                  title={`${subjectForRegister} Registration`}
-                />
-              ) : (
-                <p style={{ padding: "0.75rem 0" }}>
-                  Registration link not configured for this subject.
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+            Loading…
+          </iframe>
+        ) : (
+          <p style={{ padding: "1rem", textAlign: "center" }}>
+            Registration link not configured for this subject.
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
