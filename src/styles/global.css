@@ -67,3 +67,58 @@ html, body, #root { height: 100%; }
   height: 70vh;
   border: none;
 }
+
+/* privacy.css */
+
+.privacy-page {
+  background-color: #ffffff; /* White background for the content */
+  border-radius: 16px;       /* Rounded corners */
+  padding: 2rem;             /* Inner padding */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Soft shadow */
+}
+
+.privacy-page h1 {
+  font-size: 2.25rem; /* ~36px */
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.privacy-page h2 {
+  font-size: 1.5rem; /* ~24px */
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.privacy-page p {
+  margin-bottom: 1rem;
+}
+
+.privacy-page ul {
+  margin: 0 0 1.25rem 1.5rem;
+  padding: 0;
+  list-style-type: disc;
+}
+
+.privacy-page li {
+  margin-bottom: 0.5rem;
+}
+
+.privacy-page a {
+  color: #2563eb; /* Tailwind blue-600 */
+  text-decoration: underline;
+}
+
+.privacy-page a:hover {
+  color: #1d4ed8; /* Tailwind blue-700 */
+}
+
+.privacy-page .last-updated {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+}

@@ -40,6 +40,9 @@ import Cpp from "./pages/college/Cpp.jsx";
 import Rdbms from "./pages/college/Rdbms.jsx";
 import Dsa from "./pages/college/Dsa.jsx";
 
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import TermsConditions from "./pages/TermsConditions";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -79,6 +82,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="wb/class/:grade" element={<WBClass />} />
           <Route path="wb/class/:grade/:subject" element={<WBSyllabus />} />
 
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsConditions />} />
 
           {/* 404 */}
           <Route path="*" element={<div style={{ padding: 24 }}>Page not found</div>} />
